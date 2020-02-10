@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="11bd702a-975e-4cbe-8622-4d0f4a3db189" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ProjectId" id="1XbSwToIfuhvYWhQTPT1ce1Hp04" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.general" />
+  </component>
+  <component name="RunManager" selected="Application.Demo01LinkedHashmap">
+    <configuration name="Demo01LinkedHashmap" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.neuedu.test.demo01.Demo01LinkedHashmap" />
+      <module name="day06-code" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.neuedu.test.demo01.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Demo01Square" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.neuedu.test.Demo01Square" />
+      <module name="day01-code" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.neuedu.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Demo01LinkedHashmap" />
+        <item itemvalue="Application.Demo01Square" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="11bd702a-975e-4cbe-8622-4d0f4a3db189" name="Default Changelist" comment="" />
+      <created>1581313539729</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1581313539729</updated>
+      <workItem from="1581313542623" duration="2028000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1234" height="197" key="GridCell.Tab.0.bottom" timestamp="1581314296976">
+      <screen x="0" y="23" width="1280" height="777" />
+    </state>
+    <state width="1234" height="197" key="GridCell.Tab.0.bottom/1280.23.1280.1001/0.23.1280.777@0.23.1280.777" timestamp="1581314296976" />
+    <state width="1234" height="197" key="GridCell.Tab.0.center" timestamp="1581314296972">
+      <screen x="0" y="23" width="1280" height="777" />
+    </state>
+    <state width="1234" height="197" key="GridCell.Tab.0.center/1280.23.1280.1001/0.23.1280.777@0.23.1280.777" timestamp="1581314296972" />
+    <state width="1234" height="197" key="GridCell.Tab.0.left" timestamp="1581314296970">
+      <screen x="0" y="23" width="1280" height="777" />
+    </state>
+    <state width="1234" height="197" key="GridCell.Tab.0.left/1280.23.1280.1001/0.23.1280.777@0.23.1280.777" timestamp="1581314296970" />
+    <state width="1234" height="197" key="GridCell.Tab.0.right" timestamp="1581314296975">
+      <screen x="0" y="23" width="1280" height="777" />
+    </state>
+    <state width="1234" height="197" key="GridCell.Tab.0.right/1280.23.1280.1001/0.23.1280.777@0.23.1280.777" timestamp="1581314296975" />
+    <state x="289" y="111" width="711" height="600" key="NewModule_or_Project.wizard" timestamp="1581313922069">
+      <screen x="0" y="23" width="1280" height="777" />
+    </state>
+    <state x="289" y="111" width="711" height="600" key="NewModule_or_Project.wizard/1280.23.1280.1001/0.23.1280.777@0.23.1280.777" timestamp="1581313922069" />
+    <state x="127" y="23" key="SettingsEditor" timestamp="1581313934173">
+      <screen x="0" y="23" width="1280" height="777" />
+    </state>
+    <state x="127" y="23" key="SettingsEditor/1280.23.1280.1001/0.23.1280.777@0.23.1280.777" timestamp="1581313934173" />
+    <state x="68" y="33" key="new project wizard" timestamp="1581316604205">
+      <screen x="0" y="23" width="1280" height="777" />
+    </state>
+    <state x="68" y="33" key="new project wizard/1280.23.1280.1001/0.23.1280.777@0.23.1280.777" timestamp="1581316604205" />
+  </component>
+</project>
