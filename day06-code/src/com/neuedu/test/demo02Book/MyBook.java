@@ -1,4 +1,4 @@
-package com.neuedu.test.demo02;
+package com.neuedu.test.demo02Book;
 
 /**
  * @author xuanyu

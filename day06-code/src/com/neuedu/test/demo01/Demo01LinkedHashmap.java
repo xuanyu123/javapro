@@ -8,7 +8,7 @@ import java.util.LinkedHashMap;
  * @date 2020-02-10 12:11 下午
  * Map 接口的哈希表和链接列表的实现，具有可预知的迭代顺序
  * 底层原理：
- *      哈希表+链表 【记录元素的顺序】
+ *      哈希表+链表（记录元素的顺序）
  */
 public class Demo01LinkedHashmap {
     public static void main(String[] args) {

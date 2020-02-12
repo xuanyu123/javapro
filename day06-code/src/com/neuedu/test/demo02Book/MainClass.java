@@ -1,5 +1,6 @@
-package com.neuedu.test.demo02;
+package com.neuedu.test.demo02Book;
 
+import javax.naming.Name;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -10,6 +11,9 @@ import java.util.Scanner;
  * 定义一个类数组
  */
 public class MainClass {
+    public static void main(String[] args) {
+        new MainClass();
+    }
 
     List<MyBook> books = new ArrayList<>(200);
     int count = 0;
@@ -19,14 +23,21 @@ public class MainClass {
     1：添加图书
     2：删除图书
     3：查找图书（根据书名）
-    4：退出当用户输入1-3时，分别调用输入、删除和查找函数，当用户输入4时程序结束
+    4: 查看所有
+    5: 修改图书
+    6：退出当用户输入1-3时，分别调用输入、删除和查找函数，当用户输入4时程序结束
     * */
     public MainClass() {
         Scanner scanner = new Scanner(System.in);
+
+        IO io = new IO();
+        io.load(this);
+
         printMenu();
         while (true) {
             int choice = scanner.nextInt();
-            if (choice == 5) {
+            if (choice == 6) {
+                io.save(this);
                 System.out.println("成功退出系统，欢迎下次光临");
                 break;
             }
@@ -42,6 +53,9 @@ public class MainClass {
                     break;
                 case 4:
                     printAllBook();
+                    break;
+                case 5:
+                    changeName();
                     break;
                 default:
                     System.out.println("输入非法");
@@ -61,7 +75,8 @@ public class MainClass {
         System.out.println("2、删除图书");
         System.out.println("3、查找图书");
         System.out.println("4、查看所有");
-        System.out.println("5、退出系统");
+        System.out.println("5、修改图书");
+        System.out.println("6、退出系统");
         System.out.println("-----------");
         System.out.print("请输入编号：");
     }
@@ -102,8 +117,8 @@ public class MainClass {
         for (int i = 0; i < count; i++) {
             MyBook mybook = (MyBook) books.get(i);
             System.out.println("第" + (i + 1) + "本书名：" + mybook.getName()
-                    + "\t价格：" + mybook.getPrice() + "\t出版社：" + mybook.getPress()
-                    + "\t作者：" + mybook.getAuthor() + "\tISBN号：" + mybook.getBookISBN());
+                    + "\t" + "价格：" + mybook.getPrice() + "\t" + "出版社：" + mybook.getPress()
+                    + "\t" + "作者：" + mybook.getAuthor() + "\t" + "ISBN号：" + mybook.getBookISBN());
         }
         System.out.println("当前共有" + count + "本图书");
         printMenu();
@@ -123,8 +138,8 @@ public class MainClass {
         if (id > -1) {
             MyBook mybook = (MyBook) books.get(id);
             System.out.println("第" + (id + 1) + "本书名：" + mybook.getName()
-                    + ",价格：" + mybook.getPrice() + ",出版社：" + mybook.getPress()
-                    + ",作者：" + mybook.getAuthor() + ",ISBN号：" + mybook.getBookISBN());
+                    + "，" + "价格：" + mybook.getPrice() + "，" + "出版社：" + mybook.getPress()
+                    + "，" + "作者：" + mybook.getAuthor() + "，" + "ISBN号：" + mybook.getBookISBN());
         } else {
             System.out.println("此书不存在");
         }
@@ -139,21 +154,97 @@ public class MainClass {
      * */
     public void deleteName() {
         Scanner sc = new Scanner(System.in);
-        System.out.print("请输入想要删除的书名：");
-        String name = sc.next();
-        int id = nameFind(name);
-        if (id > -1) {
-            books.remove(id);
-            count--;
-            System.out.println("此书删除成功。");
+        System.out.print("请输入按哪种方式删除图书：1、序列/2、书名/3、返回主菜单");
+        int choose = sc.nextInt();
+        if (choose == 1) {
+            System.out.print("请输入要删除第几本书");
+            int number = sc.nextInt();
+            int id = orderFind(number);
+            if (id > -1) {
+                books.remove(id);
+                count--;
+                System.out.println("删除成功!");
+                printAllBook();
+            } else {
+                System.out.println("输入错误！");
+            }
+        } else if (choose == 2) {
+            System.out.print("请输入想要删除的书名：");
+            String name = sc.next();
+            int id = nameFind(name);
+            if (id > -1) {
+                books.remove(id);
+                count--;
+                System.out.println("此书删除成功。");
+            } else {
+                System.out.println("没有此书，删除失败。");
+            }
+        } else if (choose == 3) {
+            printMenu();
         } else {
-            System.out.println("没有此书，删除失败。");
+            System.out.println("输入非法！");
         }
-        printMenu();
     }
+
     /*
-    * 根据书名查找索引id
-    * */
+     * 修改图书
+     * */
+    public void changeName() {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("请输入按哪种方式修改图书：1、序列/2、书名/3、返回主菜单");
+        int choose = sc.nextInt();
+        if (choose == 1) {
+            System.out.print("请输入要修改第几本书：");
+            int number = sc.nextInt();
+            int id = orderFind(number);
+            if (id > -1) {
+                MyBook myBook = (MyBook) books.get(id);
+                System.out.println("原书名为：" + myBook.getName() + "请输入新的书名：");
+                String name = sc.next();
+                System.out.print("请输入价格：");
+                double price = sc.nextDouble();
+                System.out.print("请输入出版社：");
+                String press = sc.next();
+                System.out.print("请输入作者：");
+                String author = sc.next();
+                System.out.print("请输入ISBN号：");
+                String bookISBN = sc.next();
+                MyBook mybook = new MyBook(name, price, press, author, bookISBN);
+                System.out.println("修改成功！");
+                printAllBook();
+            } else {
+                System.out.println("输入错误！");
+            }
+        } else if (choose == 2) {
+            System.out.print("请输入要修改的书名：");
+            String name = sc.next();
+            int id = nameFind(name);
+            if (id > -1) {
+                MyBook myBook = (MyBook) books.get(id);
+                System.out.println("原书名为：" + myBook.getName() + "请输入新的书名：");
+                String str = sc.next();
+                System.out.print("请输入价格：");
+                double price = sc.nextDouble();
+                System.out.print("请输入出版社：");
+                String press = sc.next();
+                System.out.print("请输入作者：");
+                String author = sc.next();
+                System.out.print("请输入ISBN号：");
+                String bookISBN = sc.next();
+                MyBook mybook = new MyBook(str, price, press, author, bookISBN);
+                System.out.println("修改成功！");
+                printAllBook();
+            }
+        } else if (choose == 3) {
+            printMenu();
+        } else {
+            System.out.println("输入非法！");
+        }
+    }
+
+    /*
+     * 根据书名查找索引id
+     * */
     public int nameFind(String name) {
         int id = -1;
         for (int i = 0; i < count; i++) {
@@ -169,5 +260,14 @@ public class MainClass {
             }
         }
         return id;
+    }
+
+    public int orderFind(int number) {
+        if (number <= count) {
+            int id = number - 1;
+            return id;
+        } else {
+            return -1;
+        }
     }
 }
