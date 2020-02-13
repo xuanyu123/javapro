@@ -117,8 +117,8 @@ public class MainClass {
         for (int i = 0; i < count; i++) {
             MyBook mybook = (MyBook) books.get(i);
             System.out.println("第" + (i + 1) + "本书名：" + mybook.getName()
-                    + "\t" + "价格：" + mybook.getPrice() + "\t" + "出版社：" + mybook.getPress()
-                    + "\t" + "作者：" + mybook.getAuthor() + "\t" + "ISBN号：" + mybook.getBookISBN());
+                    + "，" + "价格：" + mybook.getPrice() + "，" + "出版社：" + mybook.getPress()
+                    + "，" + "作者：" + mybook.getAuthor() + "，" + "ISBN号：" + mybook.getBookISBN());
         }
         System.out.println("当前共有" + count + "本图书");
         printMenu();
@@ -209,7 +209,7 @@ public class MainClass {
                 String author = sc.next();
                 System.out.print("请输入ISBN号：");
                 String bookISBN = sc.next();
-                MyBook mybook = new MyBook(name, price, press, author, bookISBN);
+                myBook.setBook(name, price, press, author, bookISBN);
                 System.out.println("修改成功！");
                 printAllBook();
             } else {
@@ -231,7 +231,7 @@ public class MainClass {
                 String author = sc.next();
                 System.out.print("请输入ISBN号：");
                 String bookISBN = sc.next();
-                MyBook mybook = new MyBook(str, price, press, author, bookISBN);
+                myBook.setBook(str, price, press, author, bookISBN);
                 System.out.println("修改成功！");
                 printAllBook();
             }

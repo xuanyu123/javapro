@@ -63,4 +63,12 @@ public class MyBook {
     public void setBookISBN(String bookISBN) {
         this.bookISBN = bookISBN;
     }
+
+    public void setBook(String name, double price, String press, String author, String bookISBN) {
+        this.name = name;
+        this.price = price;
+        this.press = press;
+        this.author = author;
+        this.bookISBN = bookISBN;
+    }
 }
