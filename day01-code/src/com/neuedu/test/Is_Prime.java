@@ -10,7 +10,7 @@ public class Is_Prime {
     public static void main(String[] args) {
         int count = 0;
         int sum = 0;
-        for (int i = 2; i <= 100; i++) {
+        for (int i = 101; i <= 200; i++) {
             boolean flag = true;
             for (int j = 2; j <= i >> 1; j++) {
                 if (i % j == 0) {
