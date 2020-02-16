@@ -4,6 +4,7 @@ import org.w3c.dom.ls.LSInput;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Collections;
 
 /**
  * @author xuanyu
@@ -16,14 +17,22 @@ import java.util.ArrayList;
  */
 public class Demo32SplitNumber {
     public static void main(String[] args) {
-        splitNumber(1234);
+        splitNumber(123456);
     }
     public static void splitNumber(int n){
         ArrayList<Integer> list = new ArrayList<>();
-        while (n!=0) {
-            int a = n%10;
-            list.add(a);
-            n = n/10;
+        if (n<1000000){
+            System.out.println("输入小于7位，重新输入");
+        }else{
+            while (n!=0) {
+                int a = n%10;
+                list.add(a);
+                n = n/10;
+            }
+            Collections.reverse(list);
+            for (int i = 3; i < 7 ; i++) {
+                System.out.print(list.get(i)+" ");
+            }
         }
     }
 }
