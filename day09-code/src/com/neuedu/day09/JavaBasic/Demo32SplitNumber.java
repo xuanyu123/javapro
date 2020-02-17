@@ -1,10 +1,8 @@
 package com.neuedu.day09.JavaBasic;
 
-import org.w3c.dom.ls.LSInput;
-
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Scanner;
 
 /**
  * @author xuanyu
@@ -17,21 +15,27 @@ import java.util.Collections;
  */
 public class Demo32SplitNumber {
     public static void main(String[] args) {
-        splitNumber(123456);
+        Scanner sc = new Scanner(System.in);
+        System.out.print("请输入一个7位以上的整数：");
+        int num = sc.nextInt();
+        sc.close();
+        splitNumber(num);
     }
-    public static void splitNumber(int n){
+
+    public static void splitNumber(int n) {
         ArrayList<Integer> list = new ArrayList<>();
-        if (n<1000000){
+        if (n < 1000000) {
             System.out.println("输入小于7位，重新输入");
-        }else{
-            while (n!=0) {
-                int a = n%10;
+        } else {
+            while (n != 0) {
+                int a = n % 10;
                 list.add(a);
-                n = n/10;
+                n = n / 10;
             }
             Collections.reverse(list);
-            for (int i = 3; i < 7 ; i++) {
-                System.out.print(list.get(i)+" ");
+            System.out.print("4-7位数字为：");
+            for (int i = 3; i < 7; i++) {
+                System.out.print(list.get(i) + " ");
             }
         }
     }
