@@ -1,4 +1,4 @@
-package com.neuedu.jdbc;
+package com.neuedu.jdbc.demo;
 
 import java.sql.*;
 
