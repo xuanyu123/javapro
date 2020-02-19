@@ -8,5 +8,6 @@ public class Test {
     public static void main(String[] args) {
         StudentWeb sw = new StudentWeb();
         sw.showmenu();
+        sw.input();
     }
 }

@@ -16,6 +16,16 @@ public class Emp {
     private Integer comm;
     private Integer deptno;
 
+    public String a;
+
+    public String getA() {
+        return a;
+    }
+
+    public void setA(String a) {
+        this.a = a;
+    }
+
     public Emp() {
     }
 
@@ -105,6 +115,7 @@ public class Emp {
                 ", sal=" + sal +
                 ", comm=" + comm +
                 ", deptno=" + deptno +
+                ", a='" + a + '\'' +
                 '}';
     }
 }
