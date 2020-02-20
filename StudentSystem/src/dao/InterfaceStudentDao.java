@@ -12,6 +12,6 @@ public interface InterfaceStudentDao {
     List<Student> query();
     int add(Student student);
     int update(Student student);
-    int del(int id);
-    Student queryOne(int id);
+    int del(String sno);
+    Student queryOne(String sno);
 }

@@ -5,10 +5,7 @@ import com.alibaba.druid.pool.DruidDataSourceFactory;
 import javax.sql.DataSource;
 import java.io.IOException;
 import java.io.InputStream;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.Properties;
 
 /**
@@ -72,5 +69,29 @@ public class JDBCUtils {
     * */
     public static DataSource getDatasource(){
         return ds;
+    }
+
+    /*
+    * 封装通用增删改
+    * */
+    public static int executeUpdate(String sql,Object[] params){
+        int count = 0;
+        Connection conn = null;
+        PreparedStatement pstmt = null;
+        try {
+            conn = getConnection();
+            pstmt = conn.prepareStatement(sql);
+            if (params!=null){
+                for (int i = 0; i < params.length; i++) {
+                    pstmt.setObject(i+1,params[i]);
+                }
+            }
+            count = pstmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }finally {
+            close(pstmt,conn);
+        }
+        return count;
     }
 }

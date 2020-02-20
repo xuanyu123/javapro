@@ -28,12 +28,14 @@ public class StudentService implements InterfaceStudentService{
     }
 
     @Override
-    public int del(int id) {
-        return 0;
+    public int del(String sno) {
+        return isd.del(sno);
     }
 
     @Override
-    public Student queryOne(int id) {
+    public Student queryOne(String sno) {
         return null;
     }
+
+
 }

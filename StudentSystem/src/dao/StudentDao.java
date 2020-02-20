@@ -49,7 +49,7 @@ public class StudentDao implements InterfaceStudentDao{
         return list;
     }
 
-    @Override
+/*    @Override
     public int add(Student student) {
         int count = 0;
         Connection conn = null;
@@ -75,9 +75,15 @@ public class StudentDao implements InterfaceStudentDao{
             JDBCUtils.close(pstmt,conn);
         }
         return count;
-    }
-
+    }*/
     @Override
+    public int add(Student student) {
+        String sql = "insert into Student(Sno,Sname,Ssex,Sage,Clno) values(?,?,?,?,?)";
+        Object[] params = {student.getSno(),student.getSname(),student.getSsex(),student.getSage(),student.getClno()};
+        int count = JDBCUtils.executeUpdate(sql,params);
+        return count;
+    }
+    /*@Override
     public int update(Student student) {
         int count = 0;
         Connection conn = null;
@@ -103,15 +109,45 @@ public class StudentDao implements InterfaceStudentDao{
             JDBCUtils.close(pstmt,conn);
         }
         return count;
+    }*/
+
+    @Override
+    public int update(Student student) {
+        String sql = "update Student set Sname=?,Ssex=?,Sage=?,Clno=? where Sno=?";
+        Object[] params = {student.getSname(),student.getSsex(),student.getSage(),student.getClno(),student.getSno()};
+        int count = JDBCUtils.executeUpdate(sql,params);
+        return count;
+    }
+
+/*    @Override
+    public int del(String sno) {
+        int count = 0;
+        Connection conn = null;
+        PreparedStatement pstmt = null;
+        try {
+            conn = JDBCUtils.getConnection();
+            String sql = "delete from Student where Sno=?";
+            pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1,sno);
+            count = pstmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }finally {
+            JDBCUtils.close(pstmt,conn);
+        }
+        return count;
+    }*/
+
+    @Override
+    public int del(String sno) {
+        String sql = "delete from Student where Sno=?";
+        Object[] params = {sno};
+        int count = JDBCUtils.executeUpdate(sql,params);
+        return count;
     }
 
     @Override
-    public int del(int id) {
-        return 0;
-    }
-
-    @Override
-    public Student queryOne(int id) {
+    public Student queryOne(String sno) {
         return null;
     }
 }

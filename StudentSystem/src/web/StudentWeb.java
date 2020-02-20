@@ -36,7 +36,7 @@ public class StudentWeb {
         }else if (i==3){
             add(sc);
         }else if (i==4){
-            System.out.println("删除");
+            del(sc);
         }else if (i==5){
             System.exit(0);
         }else {
@@ -92,5 +92,10 @@ public class StudentWeb {
     /*
     * 删除信息
     * */
-
+    public void del(Scanner scanner){
+        System.out.print("请输入你要删除的学号：");
+        String sno = scanner.next();
+        iss.del(sno);
+        query();
+    }
 }
