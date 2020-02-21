@@ -30,7 +30,7 @@ public class StudentWeb {
         System.out.print("请输入编号(1--5):");
         int i = sc.nextInt();
         if (i==1){
-            query();
+            queryPrint();
         }else if (i==2){
             update(sc);
         }else if (i==3){
@@ -43,7 +43,28 @@ public class StudentWeb {
             System.out.println("输入有误，请重新输入！");
         }
     }
-
+    /*
+    * 查询方式
+    * */
+    public void queryPrint(){
+        System.out.println("-----------------");
+        System.out.println("1、查询全部学生信息");
+        System.out.println("2、按学号查询学生信息");
+        System.out.println("-----------------");
+        Scanner sc = new Scanner(System.in);
+        System.out.print("请输入编号(1--2):");
+        int i = sc.nextInt();
+        if (i==1){
+            query();
+        }else if (i==2){
+            queryOne(sc);
+        }else {
+            System.out.println("输入有误，请重新输入！");
+        }
+    }
+    /*
+    * 查询全部学生信息
+    * */
     public void query(){
         //在此调用服务层提供的方法访问数据库
         List<Student> list = iss.query();
@@ -97,5 +118,13 @@ public class StudentWeb {
         String sno = scanner.next();
         iss.del(sno);
         query();
+    }
+    /*
+    * 按学号查询学生信息
+    * */
+    public void queryOne(Scanner scanner){
+        System.out.print("请输入你要查询的学号：");
+        String sno = scanner.next();
+        iss.queryOne(sno);
     }
 }

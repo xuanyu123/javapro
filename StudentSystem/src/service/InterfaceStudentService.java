@@ -13,5 +13,6 @@ public interface InterfaceStudentService {
     int add(Student student);
     int update(Student student);
     int del(String sno);
-    Student queryOne(String sno);
+    void queryOne(String sno);
+
 }

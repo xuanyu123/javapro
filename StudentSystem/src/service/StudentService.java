@@ -33,9 +33,7 @@ public class StudentService implements InterfaceStudentService{
     }
 
     @Override
-    public Student queryOne(String sno) {
-        return null;
+    public void queryOne(String sno) {
+        isd.queryOne(sno);
     }
-
-
 }
